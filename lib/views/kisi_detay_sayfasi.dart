@@ -8,6 +8,12 @@ class KisiDetaySayfa extends StatefulWidget {
 }
 
 class _KisiDetaySayfaState extends State<KisiDetaySayfa> {
+<<<<<<< HEAD
+=======
+  var tfKisiAd = TextEditingController();
+  var tfKisiTel = TextEditingController();
+
+>>>>>>> afdb10f (desing)
   @override
   Widget build(BuildContext context) {
     return Scaffold(

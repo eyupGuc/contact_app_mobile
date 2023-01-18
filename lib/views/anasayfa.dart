@@ -1,3 +1,4 @@
+import 'package:contact_app_mobile/views/kisi_kayit_sayfasi.dart';
 import 'package:flutter/material.dart';
 
 class AnaSayfa extends StatefulWidget {
@@ -19,6 +20,15 @@ class _AnaSayfaState extends State<AnaSayfa> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const KisiKayitSayfa())).then((value){
+                print("Ana sayfaya dönüldü");
+          });
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }

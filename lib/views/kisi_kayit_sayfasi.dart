@@ -8,16 +8,39 @@ class KisiKayitSayfa extends StatefulWidget {
 }
 
 class _KisiKayitSayfaState extends State<KisiKayitSayfa> {
+  var tfKisiAd = TextEditingController();
+  var tfKisiTel = TextEditingController();
+  Future<void> kayit(String kisi_ad, String kisi_tel) async {
+    print("kişi Kayıt: $kisi_ad - $kisi_tel");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Kişiler"),
+        title: const Text("Kişi Kayıt Sayfası"),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [],
+        child: Padding(
+          padding: const EdgeInsets.only(left: 50,right: 50),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              TextField(
+                controller: tfKisiAd,
+                decoration: const InputDecoration(hintText: "kişi Ad"),
+              ),
+              TextField(
+                controller: tfKisiTel,
+                decoration: const InputDecoration(hintText: "Kişi Tel"),
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    kayit(tfKisiAd.text, tfKisiTel.text);
+                  },
+                  child: Text("KAYDET"))
+            ],
+          ),
         ),
       ),
     );
