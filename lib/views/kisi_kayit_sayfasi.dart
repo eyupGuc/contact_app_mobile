@@ -1,4 +1,6 @@
+import 'package:contact_app_mobile/cubit/kisi_kayit_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class KisiKayitSayfa extends StatefulWidget {
   const KisiKayitSayfa({Key? key}) : super(key: key);
@@ -10,9 +12,6 @@ class KisiKayitSayfa extends StatefulWidget {
 class _KisiKayitSayfaState extends State<KisiKayitSayfa> {
   var tfKisiAd = TextEditingController();
   var tfKisiTel = TextEditingController();
-  Future<void> kayit(String kisi_ad, String kisi_tel) async {
-    print("kişi Kayıt: $kisi_ad - $kisi_tel");
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +21,7 @@ class _KisiKayitSayfaState extends State<KisiKayitSayfa> {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.only(left: 50,right: 50),
+          padding: const EdgeInsets.only(left: 50, right: 50),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -36,7 +35,9 @@ class _KisiKayitSayfaState extends State<KisiKayitSayfa> {
               ),
               ElevatedButton(
                   onPressed: () {
-                    kayit(tfKisiAd.text, tfKisiTel.text);
+                    context
+                        .read<KisiKayitCubit>()
+                        .kayit(tfKisiAd.text, tfKisiTel.text);
                   },
                   child: Text("KAYDET"))
             ],
