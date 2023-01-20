@@ -9,8 +9,7 @@ class KisiDetaySayfa extends StatefulWidget {
 }
 
 class _KisiDetaySayfaState extends State<KisiDetaySayfa> {
-<<<<<<< HEAD
-=======
+
   var tfKisiAd = TextEditingController();
   var tfKisiTel = TextEditingController();
   @override
@@ -25,7 +24,7 @@ class _KisiDetaySayfaState extends State<KisiDetaySayfa> {
     print("kişi guncelle: $kisi_ad -$kisi_id- $kisi_tel");
   }
 
->>>>>>> afdb10f (desing)
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
